@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart'; void main() {
+runApp(MyApp());
+}
+class MyApp extends StatelessWidget { @override
+Widget build(BuildContext context) { return MaterialApp(
+debugShowCheckedModeBanner: false, home: IconTutorial(),
+);}}
+class IconTutorial extends StatelessWidget { @override
+Widget build(BuildContext context) { return Scaffold(
+appBar: AppBar(
+title: Text("Icons & Image Demo"), backgroundColor: Colors.teal,
+),
+body: Padding(
+padding: EdgeInsets.all(20), child: Column(
+children: [ Row(
+mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+Column(
+children: [
+Icon(Icons.home, size: 60, color: Colors.teal), Text("Home", style: TextStyle(fontSize: 14)),
+],),
+Column(
+children: [
+Icon(Icons.camera_alt, size: 60, color: Colors.orange), Text("Camera", style: TextStyle(fontSize: 14)),
+],),
+Column(
+children: [
+Icon(Icons.location_on, size: 60, color: Colors.red), Text("Location", style: TextStyle(fontSize: 14)),
+],),
+Column(
+children: [
+Icon(Icons.notifications, size: 60, color: Colors.purple), Text("Alerts", style: TextStyle(fontSize: 14)),
+],),],),
+SizedBox(height: 30), Container(
+width: double.infinity, height: 300,
+decoration: BoxDecoration(
+borderRadius: BorderRadius.circular(12),
+),
+child: ClipRRect(
+borderRadius: BorderRadius.circular(12), child: Image.network(
+'https://images.unsplash.com/photo-1501785888041-af3ef285b470', fit: BoxFit.cover,
+),),),],),),);}}
