@@ -1,0 +1,104 @@
+import 'package:flutter/material.dart'; void main() {
+runApp(MyApp());
+}
+class MyApp extends StatelessWidget { @override
+Widget build(BuildContext context) { return MaterialApp( debugShowCheckedModeBanner: false, home: LoginPage(),
+);
+}
+}
+class LoginPage extends StatelessWidget { @override
+Widget build(BuildContext context) { return Scaffold(
+appBar: AppBar(
+title: Text("Login App"), backgroundColor: Colors.grey[300],
+ 
+foregroundColor: Colors.black, elevation: 0,
+),
+backgroundColor: Colors.grey[200], body: Padding(
+padding: const EdgeInsets.all(20.0), child: Column(
+crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+SizedBox(height: 20),
+// Title Center( child: Text(
+"Tutorialkart", style: TextStyle( fontSize: 26,
+color: Colors.blue, fontWeight: FontWeight.bold,
+),
+),
+),
+SizedBox(height: 8),
+ 
+Center( child: Text( "Sign in",
+style: TextStyle(fontSize: 16),
+),
+),
+SizedBox(height: 30),
+// Username TextField(
+decoration: InputDecoration( labelText: "User Name", border: OutlineInputBorder(
+borderRadius: BorderRadius.circular(5),
+),
+),
+),
+SizedBox(height: 20),
+// Password TextField( obscureText: true,
+decoration: InputDecoration( labelText: "Password",
+ 
+border: OutlineInputBorder( borderRadius: BorderRadius.circular(5),
+),
+),
+),
+SizedBox(height: 15),
+// Forgot Password Center(
+child: GestureDetector( onTap: () {
+ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+content: Text("Go to Forgot Password Page"),
+),
+);
+},
+child: Text(
+"Forgot Password",
+style: TextStyle(color: Colors.deepPurple),
+),
+),
+),
+ 
+SizedBox(height: 20),
+// Login Button ElevatedButton( onPressed: () {
+ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+content: Text("Data Processing..."),
+),
+);
+},
+style: ElevatedButton.styleFrom( backgroundColor: Colors.deepPurple[100], foregroundColor: Colors.deepPurple, padding: EdgeInsets.symmetric(vertical: 14), shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(25),
+),
+),
+child: Text("Login"),
+),
+SizedBox(height: 20),
+ 
+// Sign up Row(
+mainAxisAlignment: MainAxisAlignment.center, children: [
+Text("Does not have account? "), GestureDetector(
+onTap: () { ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+content: Text("Go to Sign up Page"),
+),
+);
+},
+child: Text( "Sign up",
+style: TextStyle(
+color: Colors.deepPurple, fontWeight: FontWeight.bold,
+),
+),
+),
+],
+ 
+),
+],
+),
+),
+// Bottom bar bottomNavigationBar: Container( color: Colors.black87,
+padding: EdgeInsets.all(12), child: Text(
+"Go to sign up page",
+style: TextStyle(color: Colors.white),
+),
+),
+);
+}
+}
